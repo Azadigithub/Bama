@@ -1,0 +1,5 @@
+--tailwind
+--axios
+material-ui
+--react-router-dom
+zustand
