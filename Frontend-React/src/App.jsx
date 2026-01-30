@@ -6,6 +6,7 @@ import "./App.css";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Notfound from "./Pages/Notfound";
+import  { Toaster } from 'react-hot-toast';
 
 const routes = [
   { path: "/", element: <Home /> },
@@ -21,6 +22,7 @@ function App() {
     <>
       <div dir="rtl">
       </div>
+      <Toaster/>
 
       {router}
     </>
