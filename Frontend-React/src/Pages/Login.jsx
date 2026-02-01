@@ -3,13 +3,11 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  // State برای فرم و خطا
   const [username, setUsername] = useState("");
   const [usernameerror, setUsernameerror] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  // فانکشن ارسال فرم
   const handleLogin = () => {
     setTimeout(()=>{
 
@@ -54,6 +52,7 @@ const Login = () => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-[20px]">
+    {/* Bama Logo */}
       <div className="flex-center max-w-[300px]">
         <img src="./Logo/Bama-Login.png" alt="Logo" className="w-full h-full" />
       </div>
