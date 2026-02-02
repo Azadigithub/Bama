@@ -1,26 +1,26 @@
 import React, { useState } from "react";
-import axios from "axios";
 import toast from "react-hot-toast";
-// import loginSchema from "../../Validators/Login";
-
 import { Link } from "react-router-dom";
-import { loginSchema } from "../../Validators/Login";
+import { signinschema } from "../../Validators/Login";
 
-const Login = () => {
+const Signin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  const handleLogin = () => {
-    const newUser = { username, password };
-    const result = loginSchema.safeParse(newUser);
-    // console.log(result.error.issues[0].message);
+  const [repeatpassword, setRepeatpassword] = useState("");
+  const [email, setEmail] = useState("");
+  const handleSignin = () => {
+    const newuser = { username, password, repeatpassword, email };
+    const result = signinschema.safeParse(newuser);
+    toast.loading("درحال برسی اطلاعات", { duration: 2000 });
     setTimeout(() => {
       if (result.success) {
-        return toast.success("ورود با موفقیت انجام شد.", { duration: 3000 });
-      }
-      return toast.error(result.error.issues[0].message, { duration: 3000 });
+        //   console.log(username, password, repeatpassword, email);
+          return toast.success("ثبت نام شما با موفقیت انجام شد.", 2000);
+        }
+        //   console.log(result);
+        //   console.log(result.error.issues[0].message);
+        return toast.error(result.error.issues[0].message);
     }, 2000);
-    toast.loading("درحال برسی اطلاعات", { duration: 2000 });
   };
 
   return (
@@ -31,7 +31,7 @@ const Login = () => {
       </div>
 
       <div className="flex-center">
-        <h1 className="font-Vazir"> ورود به حساب کاربری</h1>
+        <h1 className="font-Vazir"> ثبت نام حساب کاربری</h1>
       </div>
 
       <div className="flex flex-col items-center justify-center gap-[10px]">
@@ -49,23 +49,37 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           className="border-2 border-tint-1 px-[15px] py-[5px] rounded-[10px]"
         />
+        <input
+          type="password"
+          placeholder="تکرار رمز عبور"
+          value={repeatpassword}
+          onChange={(e) => setRepeatpassword(e.target.value)}
+          className="border-2 border-tint-1 px-[15px] py-[5px] rounded-[10px]"
+        />
+        <input
+          type="password"
+          placeholder=" ایمیل"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="border-2 border-tint-1 px-[15px] py-[5px] rounded-[10px]"
+        />
         {/* {error && <p className="text-red-500">{error}</p>} */}
 
         <a href="#">فراموشی رمز عبور</a>
 
         <button
-          onClick={handleLogin}
+          onClick={handleSignin}
           className="bg-black px-10 py-8 rounded-[10px] text-white text-center"
         >
-          ورود
+          ثبت نام
         </button>
         <div className="flex-center gap-[10px]">
-          <p>حساب کاربری ندارید؟</p>
-          <Link to={"/Signin"}> ثبت نام </Link>
+          <p>حساب کاربری دارید؟</p>
+          <Link to={"/Login"}> ورود</Link>
         </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Signin;

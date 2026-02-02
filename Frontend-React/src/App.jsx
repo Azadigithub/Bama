@@ -7,11 +7,13 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Notfound from "./Pages/Notfound";
 import  { Toaster } from 'react-hot-toast';
+import Signin from "./Pages/Signin";
 
 const routes = [
   { path: "/", element: <Home /> },
   // { path: "/Products", element: <Shop /> },
   { path: "/Login", element: <Login /> },
+  { path: "/Signin", element: <Signin /> },
   // { path: "/Profile", element: <Profile /> },
   { path: "*", element: <Notfound /> },
   // { path: "/product/:id", element: <Details /> },
