@@ -3,12 +3,14 @@ import axios from "axios";
 import toast from "react-hot-toast";
 // import loginSchema from "../../Validators/Login";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { loginSchema } from "../../Validators/Login";
+// import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     const newUser = { username, password };
@@ -16,11 +18,45 @@ const Login = () => {
     // console.log(result.error.issues[0].message);
     setTimeout(() => {
       if (result.success) {
-        return toast.success("ورود با موفقیت انجام شد.", { duration: 3000 });
+        // console.log(username, password);
+        fetch("http://127.0.0.1:8000/api/users/login/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username,
+            password,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            // console.log(data);
+            if (data.access) {
+              // ذخیره توکن
+              localStorage.setItem("access", data.access);
+              localStorage.setItem("refresh", data.refresh);
+              localStorage.setItem("username", data.username);
+
+              toast.success("ورود با موفقیت انجام شد.", { duration: 3000 });
+
+              setTimeout(() => {
+                navigate("/"); // رفتن به صفحه اصلی
+              }, 500);
+            } else {
+              toast.error("نام کاربری یا رمز عبور اشتباه است");
+            }
+          })
+
+          .catch((err) => {
+            console.error(err);
+            return toast.error("خطا در ارتباط با سرور");
+          });
+      } else {
+        return toast.error(result.error.issues[0].message, { duration: 3000 });
       }
-      return toast.error(result.error.issues[0].message, { duration: 3000 });
-    }, 2000);
-    toast.loading("درحال برسی اطلاعات", { duration: 2000 });
+    }, 1500);
+    toast.loading("درحال برسی اطلاعات", { duration: 3000 });
   };
 
   return (

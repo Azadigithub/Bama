@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useRoutes } from "react-router-dom"
+import { useRoutes } from "react-router-dom";
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
 import "./App.css";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Notfound from "./Pages/Notfound";
-import  { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 import Signin from "./Pages/Signin";
 
 const routes = [
@@ -22,9 +22,8 @@ function App() {
   const router = useRoutes(routes);
   return (
     <>
-      <div dir="rtl">
-      </div>
-      <Toaster/>
+      <div dir="rtl"></div>
+      <Toaster />
 
       {router}
     </>
