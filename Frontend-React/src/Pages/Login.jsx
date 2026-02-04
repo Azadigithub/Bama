@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 
 import { Link, useNavigate } from "react-router-dom";
 import { loginSchema } from "../../Validators/Login";
-// import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");

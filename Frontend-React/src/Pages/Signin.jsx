@@ -15,11 +15,11 @@ const Signin = () => {
     setTimeout(() => {
       if (result.success) {
         //   console.log(username, password, repeatpassword, email);
-          return toast.success("ثبت نام شما با موفقیت انجام شد.", 2000);
-        }
-        //   console.log(result);
-        //   console.log(result.error.issues[0].message);
-        return toast.error(result.error.issues[0].message);
+        return toast.success("ثبت نام شما با موفقیت انجام شد.", 2000);
+      }
+      //   console.log(result);
+      //   console.log(result.error.issues[0].message);
+      return toast.error(result.error.issues[0].message);
     }, 2000);
   };
 
@@ -57,8 +57,8 @@ const Signin = () => {
           className="border-2 border-tint-1 px-[15px] py-[5px] rounded-[10px]"
         />
         <input
-          type="password"
-          placeholder=" ایمیل"
+          type="text"
+          placeholder="ایمیل"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="border-2 border-tint-1 px-[15px] py-[5px] rounded-[10px]"
