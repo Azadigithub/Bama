@@ -1,26 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { signinschema } from "../../Validators/Login";
+import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [repeatpassword, setRepeatpassword] = useState("");
   const [email, setEmail] = useState("");
-  const handleSignin = () => {
-    const newuser = { username, password, repeatpassword, email };
-    const result = signinschema.safeParse(newuser);
-    toast.loading("درحال برسی اطلاعات", { duration: 2000 });
-    setTimeout(() => {
-      if (result.success) {
-        //   console.log(username, password, repeatpassword, email);
-        return toast.success("ثبت نام شما با موفقیت انجام شد.", 2000);
+  const navigate = useNavigate();
+  const handleSignin = async () => {
+    const newUser = { username, password, repeatpassword, email };
+    const result = signinschema.safeParse(newUser);
+    if (!result.success) {
+      toast.error(result.error.issues[0].message);
+      return;
+    }
+    const toastId = toast.loading("در حال بررسی اطلاعات...");
+    try {
+      const res = await fetch(
+        "http://127.0.0.1:8000/api/users/users/register/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username,
+            password,
+            email,
+          }),
+        },
+      );
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data?.message || "خطایی رخ داد");
       }
-      //   console.log(result);
-      //   console.log(result.error.issues[0].message);
-      return toast.error(result.error.issues[0].message);
-    }, 2000);
+
+      toast.success("ثبت نام با موفقیت انجام شد", { id: toastId });
+      console.log("Response:", data);
+      setTimeout(() => {
+        navigate("/");
+      }, 500);
+    } catch (error) {
+      toast.error( "ثبت نام با خطا مواجه شد", { id: toastId });
+    }
   };
 
   return (

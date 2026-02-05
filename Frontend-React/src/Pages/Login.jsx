@@ -40,7 +40,7 @@ const Login = () => {
               toast.success("ورود با موفقیت انجام شد.", { duration: 3000 });
 
               setTimeout(() => {
-                navigate("/"); // رفتن به صفحه اصلی
+                navigate("/");
               }, 500);
             } else {
               toast.error("نام کاربری یا رمز عبور اشتباه است");
