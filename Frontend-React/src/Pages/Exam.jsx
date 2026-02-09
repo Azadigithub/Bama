@@ -25,14 +25,14 @@ const Questions = [
 
 const Exam = () => {
   return (
-    <div className="flex w-full h-full flex-col items-center justify-center p-[50px] gap-[10px] ">
+    <div className="flex w-full h-full flex-col items-center justify-center p-[20px] gap-[10px] ">
       {/* Header of exam */}
-      <div className=" flex items-center justify-evenly w-[100%] border-gray-700 border-2 rounded-[10px] p-[15px] ">
+      <div className="flex flex-col sm:flex-row items-center justify-evenly w-[100%] border-gray-700 border-2 rounded-[10px] p-[15px] ">
         <div className=" flex flex-col items-center justify-center gap-[20px]">
           <p>تعداد سوالات : 115 سوال</p>
           {/* <p>استفاده از ماشین حساب مجاز نیست.</p> */}
         </div>
-        <div className="flex flex-col ">
+        <div className="flex flex-col p-[20px] ">
           <h1 className="text-center text-[30px] font-bold">
             آزمون ورودی دوره های کارشناسی ارشد - سال 1405
           </h1>
@@ -45,7 +45,7 @@ const Exam = () => {
           {/* <p> آزمون نمره منفی دارد.</p> */}
         </div>
       </div>
-      <div className=" flex items-center justify-evenly w-[100%] border-gray-700 border-2 rounded-[10px] p-[15px] ">
+      <div className=" flex-center flex-col sm:flex-row w-[100%] border-gray-700 border-2 rounded-[10px] p-[15px] gap-[10px] ">
         <div className=" flex-center">
           <p>استفاده از ماشین حساب مجاز نیست.</p>
         </div>
@@ -56,13 +56,14 @@ const Exam = () => {
           <p> آزمون نمره منفی دارد.</p>
         </div>
       </div>
-      <div className="flex w-full h-full">
+      {/* -------------Main content */}
+      <div className="grid w-full h-full small:grid-cols-[67%_30%]  medium:grid-cols-[75%_23%] xlarge:grid-cols-[77%_21%] large:grid-cols-[20%_63%_15%] gap-[10px]">
         {/* Right navbar */}
-        <div className="w-[20%] h-[100vh] border-gray-700 border-2 rounded-[5px] m-5"></div>
+        <div className="hidden large:block w-[100%] h-[100vh] border-gray-700 border-2 rounded-[5px] "></div>
         {/* center navbar */}
-        <div className="w-[65%] h-[100vh] border-gray-700 border-2 rounded-[5px] my-5"></div>
+        <div className="w-[100%] h-[100vh] border-gray-700 border-2 rounded-[5px] "></div>
         {/* Left navbar */}
-        <div className="flex flex-col justify-center w-[15%] h-full border-gray-700 border-2 rounded-[5px] m-5 gap-[10px] p-[10px]">
+        <div className=" w-[100%] h-full grid grid-cols-[auto_auto] items-center justify-evenly small:flex small:flex-col small:justify-center border-gray-700 border-2 rounded-[5px] gap-[10px] p-[10px]">
           {Questions.map((item) => {
             return <Options number={item.id} />;
           })}

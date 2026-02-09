@@ -18,6 +18,8 @@
   --breakpoint-small: 520px;
   /* --breakpoint-min-sma: 680px; */
   --breakpoint-medium: 680px;
+  /* --breakpoint-large-medium: 780px; */
+  --breakpoint-xlarge: 780px;
   /* --breakpoint-large-medium: 680px; */
   --breakpoint-large: 1130px;
 
@@ -38,5 +40,8 @@
 
   /* Coustom colors  */
   --color-tint-1: oklch(0.69 0.04 260.07);
+  /* coustom grid  */
+  /* grid-cols-[repeat(2,auto)] */
+  /* grid-cols-[auto_auto] */
 
 }
