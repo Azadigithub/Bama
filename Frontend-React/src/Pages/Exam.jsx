@@ -27,21 +27,31 @@ const Questions = [
   { id: 23, title: "" },
   { id: 24, title: "" },
   { id: 25, title: "" },
-  // { id: 26, title: "" },
-  // { id: 27, title: "" },
-  // { id: 28, title: "" },
-  // { id: 29, title: "" },
-  // { id: 30, title: "" },
-  // { id: 31, title: "" },
-  // { id: 32, title: "" },
-  // { id: 33, title: "" },
-  // { id: 34, title: "" },
-  // { id: 35, title: "" },
-  // { id: 36, title: "" },
-  // { id: 37, title: "" },
-  // { id: 38, title: "" },
-  // { id: 39, title: "" },
-  // { id: 40, title: "" },
+  { id: 26, title: "" },
+  { id: 27, title: "" },
+  { id: 28, title: "" },
+  { id: 29, title: "" },
+  { id: 30, title: "" },
+  { id: 31, title: "" },
+  { id: 32, title: "" },
+  { id: 33, title: "" },
+  { id: 34, title: "" },
+  { id: 35, title: "" },
+  { id: 36, title: "" },
+  { id: 37, title: "" },
+  { id: 38, title: "" },
+  { id: 39, title: "" },
+  { id: 40, title: "" },
+  { id: 41, title: "" },
+  { id: 42, title: "" },
+  { id: 43, title: "" },
+  { id: 44, title: "" },
+  { id: 45, title: "" },
+  { id: 46, title: "" },
+  { id: 47, title: "" },
+  { id: 48, title: "" },
+  { id: 49, title: "" },
+  { id: 50, title: "" },
 ];
 
 const Exam = () => {
@@ -204,7 +214,7 @@ const Exam = () => {
         {/* Left navbar */}
         <div
           dir="rtl"
-          className=" w-[100%] h-full grid grid-cols-[auto_auto] items-center justify-evenly small:flex small:flex-col small:justify-center border-gray-700 border-2 rounded-[5px] gap-[10px] p-[10px]"
+          className=" max-h-[50rem] flex-wrap overflow-scroll h-full grid grid-cols-[auto_auto] items-center justify-evenly small:flex small:flex-col small:justify-center border-gray-700 border-2 rounded-[5px] gap-[10px] p-[10px]"
         >
           {Questions.map((item) => {
             return <Options key={item.id} number={item.id} started={started} />;
