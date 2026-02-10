@@ -11,16 +11,16 @@ const Homeslider = ({ name, children, DataImages = [] }) => {
     <div className="">
       <Swiper 
         pagination={true}
-        modules={[Pagination, ]}
+        modules={[Pagination,Autoplay ]}
         // modules={[Pagination]}
         // Autoplay
-        // loop={true}
+        loop={true}
         autoplay={{
           delay: 4000,
           disableOnInteraction: false,
         }}
 
-        className="mySwiper h-[356px] "
+        className="mySwiper h-[306px] "
       >
         {DataImages.map((items) => (
           <SwiperSlide key={items.id}>
