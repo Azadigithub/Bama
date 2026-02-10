@@ -118,9 +118,9 @@ const Exam = () => {
 
   // --------------------------------------------------------------------------------------------
   return (
-    <div className="flex w-full h-full flex-col items-center justify-center p-[20px] gap-[10px] ">
+    <div className="font-Vazir max-w-[1250px] mx-auto flex w-full h-full flex-col items-center justify-center p-[20px] gap-[10px]  ">
       {/* Header of exam */}
-      <div className="flex flex-col sm:flex-row items-center justify-evenly w-[100%] border-gray-700 border-2 rounded-[10px] p-[15px] ">
+      <div className="flex flex-col sm:flex-row items-center justify-evenly w-[100%] border-gray-700 border-4 rounded-[10px] p-[15px] ">
         <div className=" flex flex-col items-center justify-center gap-[20px]">
           <p>تعداد سوالات : 115 سوال</p>
           {/* <p>استفاده از ماشین حساب مجاز نیست.</p> */}
@@ -150,7 +150,7 @@ const Exam = () => {
           </div>
         </div>
       </div>
-      <div className=" flex items-center justify-evenly flex-col sm:flex-row w-[100%] border-gray-700 border-2 rounded-[10px] p-[15px] gap-[10px] ">
+      <div className=" flex items-center justify-evenly flex-col sm:flex-row w-[100%] border-gray-700 border-4 rounded-[10px] p-[15px] gap-[10px] ">
         <div className=" flex-center">
           <p>استفاده از ماشین حساب مجاز نیست.</p>
         </div>
@@ -163,12 +163,12 @@ const Exam = () => {
       </div>
 
       {/* -------------Main content */}
-      <div className="grid w-full h-full small:grid-cols-[67%_30%]  medium:grid-cols-[75%_23%] xlarge:grid-cols-[77%_21%] large:grid-cols-[20%_63%_15%] gap-[10px]">
+      <div className="grid w-full h-full medium:grid-cols-[75%_23%] xlarge:grid-cols-[77%_21%] large:grid-cols-[20%_63%_15%] gap-[10px]">
         {/* Right navbar */}
-        <div className="hidden large:block w-[100%] h-[100vh] border-gray-700 border-2 rounded-[5px] "></div>
+        <div className="hidden large:block w-[100%] h-[100vh] border-gray-700 border-3 rounded-[5px] "></div>
 
         {/* center navbar */}
-        <div className="w-[100%] h-[100vh] border-gray-700 border-2 rounded-[5px] ">
+        <div className="w-[100%] min-h-[800px] border-gray-700 border-3 rounded-[5px] ">
           {/* Main source of pdf exam */}
           {started && (
             <div className="w-[100%] h-[100%] border-gray-700 border-2 rounded-[5px]">
@@ -187,12 +187,47 @@ const Exam = () => {
             </div>
           )}
           {!started && (
-            <div className="flex-center w-full h-full ">
+            <div className=" flex-center flex-col w-full h-full p-[40px] ">
+              <div className="flex flex-col gap-[20px] my-[20px]">
+                <h3 className="text-center text-[24px] font-bold">
+                  نکات قابل توجه قبل از شروع آزمون:
+                </h3>
+                <a className="border-2 border-gray-700 p-[5px] rounded-8 hover:cursor-pointer">
+                  مشاهده نکات آموزشی
+                </a>
+                <ul>
+                  <li>
+                    پس از شروع آزمون مدت زمان پاسخگویی شروع و تا پایان آزمون
+                    قابل متوقف نخواهد شد.
+                  </li>
+                  <li>در شروع آزمون گزینه ها فعال خواهد شد.</li>
+                  <li>
+                    برای نمایش سایر گزینه ها بصورت افقی محور گزینه هارا اسکرول
+                    کنید
+                  </li>
+                  <li>
+                    خاموش بودن هرگونه فیلتر شکن در حین آزمون الزامی است درنظر
+                    داشته باشید فعال بودن فیلتر شکن منجر به قطعی در اتصال سامانه
+                    شود امکان شرکت مجدد وجود نخواهد داشت و مسعولیت آن برعهده خود
+                    شما می باشد.
+                  </li>
+                  <li>
+                    پس از شروع به مدت حداقل یک ساعت امکان پایان آزمون وجود ندارد
+                  </li>
+                  <li>
+                    در زمان پاسخگویی با دقت گزینه مورد نظر را انتخاب نمایید
+                  </li>
+                  <li>
+                    درصورت انتخاب گزینه مورد نظر، تغییر گزینه انتخاب شده بلا
+                    مانع است اما امکان حذف گزینه انتخاب شده وجود ندارد.
+                  </li>
+                </ul>
+              </div>
               <button
                 onClick={() => {
                   StartExam();
                 }}
-                className=" border-2 border-black rounded-8 p-[20px]"
+                className=" border-2 border-black rounded-8 p-[20px] hover:cursor-pointer"
               >
                 شروع آزمون
               </button>
@@ -204,7 +239,7 @@ const Exam = () => {
                 onClick={() => {
                   EndExam();
                 }}
-                className=" border-2 border-black rounded-8 p-[20px]"
+                className=" border-2 border-black rounded-8 p-[20px]  hover:cursor-pointer"
               >
                 پایان آزمون
               </button>
@@ -214,7 +249,7 @@ const Exam = () => {
         {/* Left navbar */}
         <div
           dir="rtl"
-          className=" max-h-[50rem] flex-wrap overflow-scroll h-full grid grid-cols-[auto_auto] items-center justify-evenly small:flex small:flex-col small:justify-center border-gray-700 border-2 rounded-[5px] gap-[10px] p-[10px]"
+          className=" max-h-[50rem] flex-wrap overflow-scroll h-full grid grid-cols-[auto_auto] items-center justify-evenly medium:flex medium:flex-col medium:justify-center  medium:mt-0 border-gray-700 border-3 rounded-[5px] mt-[100px] gap-[10px] p-[10px]"
         >
           {Questions.map((item) => {
             return <Options key={item.id} number={item.id} started={started} />;
