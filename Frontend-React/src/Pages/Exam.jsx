@@ -64,8 +64,8 @@ const Exam = () => {
   }, []);
 
   const StartExam = () => {
-    // const now = Date.now();
-    setStartTime(Date.now());
+    const now = Date.now();
+    setStartTime(now);
 
     setStarted(true);
     localStorage.setItem(
@@ -202,9 +202,12 @@ const Exam = () => {
           )}
         </div>
         {/* Left navbar */}
-        <div className=" w-[100%] h-full grid grid-cols-[auto_auto] items-center justify-evenly small:flex small:flex-col small:justify-center border-gray-700 border-2 rounded-[5px] gap-[10px] p-[10px]">
+        <div
+          dir="rtl"
+          className=" w-[100%] h-full grid grid-cols-[auto_auto] items-center justify-evenly small:flex small:flex-col small:justify-center border-gray-700 border-2 rounded-[5px] gap-[10px] p-[10px]"
+        >
           {Questions.map((item) => {
-            return <Options key={item.id} number={item.id} />;
+            return <Options key={item.id} number={item.id} started={started} />;
           })}
         </div>
       </div>
