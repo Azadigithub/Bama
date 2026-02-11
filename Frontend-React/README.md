@@ -13,3 +13,7 @@ exam details :
 - record endTime when timer finishes
 - display timer with hours:minutes:seconds and color warning for last 10 minutes
 - use Tailwind for styling
+
+designed with MUI such as :
+-Alert
+-Sidebar

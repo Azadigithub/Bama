@@ -1,5 +1,6 @@
 import React from "react";
 import Homeslider from "../Components/Slider/Homeslider";
+import MuiSidabar from "../Components/Home/MuiSidabar";
 const ArrayImages = [
   { url: "./Slider-images/azmoon-1.jpeg" },
   { url: "./Slider-images/exam-and time.jpeg" },
@@ -12,7 +13,8 @@ const ArrayImages = [
 const Home = () => {
   return (
     <div className="font-Vazir w-full h-[100vh] grid  grid-cols-[100%] medium:grid-cols-[20%_80%]">
-      <div className="  bg-gray-100 hidden medium:block">
+      {/* Sidebar  */}
+      <div className="border-amber-700 border-l-4  bg-gray-100 hidden medium:block ">
         <img src="./Logo/logo_azmoon.jpg" alt="" />
         <div className="flex-center">
           <img
@@ -65,11 +67,13 @@ const Home = () => {
           />
         </div>
       </div>
-      <div className="bg-amber-700 ">
+      {/* <div className="bg-amber-100 "> */}
         {/* <Homeslider DataImages={ArrayImages} name /> */}
-      </div>
+      {/* </div> */}
       {/* <div className="bg-green-700 hidden medium:block"></div> */}
+
     </div>
+
   );
 };
 
