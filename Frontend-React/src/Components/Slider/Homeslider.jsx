@@ -16,15 +16,16 @@ const Homeslider = ({ name, children, DataImages = [] }) => {
         // Autoplay
         loop={true}
         autoplay={{
-          delay: 4000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
 
-        className="mySwiper h-[306px] "
+        className="mySwiper medium:h-[85px] h-[125px] "
       >
         {DataImages.map((items) => (
           <SwiperSlide key={items.id}>
-            <img src={items.url} alt={items.alt} className="w-full h-full object-cover" />
+            {/* <img src={items.url} alt={items.alt} className="w-full h-full object-cover" /> */}
+            <p className="text-black text-[24px] text-center p-[15px]">{items.title}</p>
           </SwiperSlide>
         ))}
       </Swiper>
