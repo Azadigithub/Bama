@@ -1,5 +1,6 @@
 import React from "react";
 import Homeslider from "../Components/Slider/Homeslider";
+import Examcontent from "../Components/Examcontent";
 const ArrayImages = [
   {
     url: "./Slider-images/azmoon-1.jpeg",
@@ -21,7 +22,30 @@ const ArrayImages = [
     url: "./Slider-images/exam-4.webp",
     title: "آزمون های آزمایشی ، تست خود سنجی و افزایش مهارت   ",
   },
+  { url: "./Slider-images/exam-77.jpg", title: "تمرین تکنیک‌های تست زنی" },
+  { url: "./Slider-images/exam-77.jpg", title: "شناسایی نقاط قوت و ضعف" },
   { url: "./Slider-images/exam-77.jpg", title: "مطمعن شو که قبول میشی!" },
+];
+
+const ExamInfows = [
+  {
+    id: 1,
+    title: "آزمون های آزمایشی کامپیوتر",
+    description: "چهار مرحله آزمون جامع تخصصی از کلیه مباحث ...",
+    image: "./Images/Azmoon2.jpg",
+  },
+  {
+    id: 2,
+    title: "آزمون های آزمایشی کامپیوتر",
+    description: "چهار مرحله آزمون جامع تخصصی از کلیه مباحث ...",
+    image: "./Images/Azmoon2.jpg",
+  },
+  {
+    id: 3,
+    title: "آزمون های آزمایشی کامپیوتر",
+    description: " چهار مرحله آزمون جامع تخصصی از کلیه مباحث ...",
+    image: "./Images/Azmoon2.jpg",
+  },
 ];
 
 const Home = () => {
@@ -83,8 +107,14 @@ const Home = () => {
       </div>
       {/* Main content  */}
       <div className="">
-        <div className="w-[98%] h-[85px] bg-amber-400 mx-auto">
+        {/* header slider  */}
+        <div className="w-[full] h-[85px] bg-amber-400 mx-auto">
           <Homeslider DataImages={ArrayImages} name />
+        </div>
+        <div className="w-full grid grid-cols-4 bg-gray-200 p-[30px]">
+          {ExamInfows.map((info) => {
+            return <Examcontent key={info.id} {...info} />;
+          })}
         </div>
       </div>
       {/* <div className="bg-amber-100 "> */}
