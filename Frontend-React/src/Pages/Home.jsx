@@ -30,20 +30,52 @@ const ArrayImages = [
 const ExamInfows = [
   {
     id: 1,
-    title: "آزمون های آزمایشی کامپیوتر",
+    title: "آزمون های آزمایشی  مهندسی کامپیوتر",
     description: "چهار مرحله آزمون جامع تخصصی از کلیه مباحث ...",
     image: "./Images/Azmoon2.jpg",
   },
   {
     id: 2,
-    title: "آزمون های آزمایشی کامپیوتر",
+    title: "آزمون های آزمایشی مهندسی برق ",
     description: "چهار مرحله آزمون جامع تخصصی از کلیه مباحث ...",
     image: "./Images/Azmoon2.jpg",
   },
   {
     id: 3,
-    title: "آزمون های آزمایشی کامپیوتر",
+    title: "آزمون های آزمایشی علوم انسانی",
     description: " چهار مرحله آزمون جامع تخصصی از کلیه مباحث ...",
+    image: "./Images/Azmoon2.jpg",
+  },
+  {
+    id: 4,
+    title: "آزمون های آزمایشی زبان",
+    description: " چهار مرحله آزمون جامع تخصصی از کلیه مباحث ...",
+    image: "./Images/Azmoon2.jpg",
+  },
+];
+const KonkoorExams = [
+  {
+    id: 1,
+    title: "کنکور های مهندسی کامپیوتر",
+    description: "کنکور ارشد کامپیوتر از سال 1380 تا 1404 شامل 24 آزمون",
+    image: "./Images/Azmoon2.jpg",
+  },
+  {
+    id: 2,
+    title: "کنکور های مهندسی برق ",
+    description: "کنکور ارشد برق از سال 1380 تا 1404",
+    image: "./Images/Azmoon2.jpg",
+  },
+  {
+    id: 3,
+    title: " کنکور های علوم انسانی",
+    description: "کنکور ارشد انسانی از سال 1380 تا 1404",
+    image: "./Images/Azmoon2.jpg",
+  },
+  {
+    id: 4,
+    title: "  کنکور های رشته زبان",
+    description: "کنکور ارشد زبان از سال 1380 تا  1404 شامل 24 آزمون",
     image: "./Images/Azmoon2.jpg",
   },
 ];
@@ -53,7 +85,7 @@ const Home = () => {
     <div className="font-Vazir w-full h-[100vh] grid  grid-cols-[100%] medium:grid-cols-[20%_80%]">
       {/* Sidebar  */}
       <div className="border-amber-700 border-l-4  bg-blue-100 hidden medium:block ">
-        <img src="./Logo/logo_azmoon.jpg" alt="" className="rounded-[60px]" />
+        <img src="./Logo/logo_azmoon.jpg" alt="" className="rounded-[60px] p-[10px]" />
         <div className="flex-center">
           <img
             src="./Logo/Logo_azmoon2.png"
@@ -108,11 +140,18 @@ const Home = () => {
       {/* Main content  */}
       <div className="">
         {/* header slider  */}
-        <div className="w-[full] h-[85px] bg-amber-400 mx-auto">
+        <div className="w-[full] h-[85px] bg-amber-400 mx-auto mb-[30px]">
           <Homeslider DataImages={ArrayImages} name />
-        </div>
-        <div className="w-full grid grid-cols-4 bg-gray-200 p-[30px]">
+        </div >
+        <h2 className="text-center text-[32px] font-bold">آزمون های آزمایشی</h2>
+        <div className="w-full flex-center flex-col gap-[20px] small:grid small:grid-cols-2 xlarge:grid-cols-[auto_auto_auto] large:grid-cols-4 bg-gray-200 p-[30px]">
           {ExamInfows.map((info) => {
+            return <Examcontent key={info.id} {...info} />;
+          })}
+        </div>
+        <h2 className="text-center text-[32px] font-bold">کنکور های سالهای گذشته</h2>
+        <div className="w-full flex-center gap-[20px] flex-col small:grid small:grid-cols-2 xlarge:grid-cols-[auto_auto_auto] large:grid-cols-4 bg-gray-200 p-[30px]">
+          {KonkoorExams.map((info) => {
             return <Examcontent key={info.id} {...info} />;
           })}
         </div>
