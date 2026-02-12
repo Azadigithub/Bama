@@ -1,6 +1,12 @@
 import React from "react";
 import Homeslider from "../Components/Slider/Homeslider";
 import Examcontent from "../Components/Examcontent";
+// rect-icons
+import { BiSolidCategory } from "react-icons/bi";
+import { IoLogInOutline } from "react-icons/io5";
+import { LiaArtstation } from "react-icons/lia";
+import { FaRegQuestionCircle } from "react-icons/fa";
+
 const ArrayImages = [
   {
     url: "./Slider-images/azmoon-1.jpeg",
@@ -85,7 +91,11 @@ const Home = () => {
     <div className="font-Vazir w-full h-[100vh] grid  grid-cols-[100%] medium:grid-cols-[20%_80%]">
       {/* Sidebar  */}
       <div className="border-amber-700 border-l-4  bg-blue-100 hidden medium:block ">
-        <img src="./Logo/logo_azmoon.jpg" alt="" className="rounded-[60px] p-[10px]" />
+        <img
+          src="./Logo/logo_azmoon.jpg"
+          alt=""
+          className="rounded-[60px] p-[10px]"
+        />
         <div className="flex-center">
           <img
             src="./Logo/Logo_azmoon2.png"
@@ -142,14 +152,44 @@ const Home = () => {
         {/* header slider  */}
         <div className="w-[full] h-[85px] bg-amber-400 mx-auto mb-[30px]">
           <Homeslider DataImages={ArrayImages} name />
-        </div >
+        </div>
+        {/* Categories  */}
+        <div className="flex-center flex-wrap justify-evenly w-[full] text-white bg-gray-600 p-[20px] gap-[20px]">
+          <div className="flex-center gap-[30px] flex-wrap">
+            <div className="flex-center">
+              <BiSolidCategory />
+              <h3>دسته بندی آزمون ها</h3>
+            </div>
+            <div className="flex-center">
+              <LiaArtstation />
+              <h3> شگفت انگیز</h3>
+            </div>
+            <div className="flex-center">
+              <FaRegQuestionCircle />
+              <h3>سوالی دارید؟</h3>
+            </div>
+          </div>
+          <div className="flex-center gap-[20px] ">
+            <div className="flex-center  bg-white text-gray-600 p-[10px] rounded-4 cursor-pointer">
+              <IoLogInOutline />
+              <h3>ورود</h3>
+            </div>
+            <div className="flex-center border-white border-2 p-[10px] rounded-4 cursor-pointer">
+              <IoLogInOutline />
+              <h3>ثبت نام</h3>
+            </div>
+          </div>
+        </div>
+
         <h2 className="text-center text-[32px] font-bold">آزمون های آزمایشی</h2>
         <div className="w-full flex-center flex-col gap-[20px] small:grid small:grid-cols-2 xlarge:grid-cols-[auto_auto_auto] large:grid-cols-4 bg-gray-200 p-[30px]">
           {ExamInfows.map((info) => {
             return <Examcontent key={info.id} {...info} />;
           })}
         </div>
-        <h2 className="text-center text-[32px] font-bold">کنکور های سالهای گذشته</h2>
+        <h2 className="text-center text-[32px] font-bold">
+          کنکور های سالهای گذشته
+        </h2>
         <div className="w-full flex-center gap-[20px] flex-col small:grid small:grid-cols-2 xlarge:grid-cols-[auto_auto_auto] large:grid-cols-4 bg-gray-200 p-[30px]">
           {KonkoorExams.map((info) => {
             return <Examcontent key={info.id} {...info} />;
