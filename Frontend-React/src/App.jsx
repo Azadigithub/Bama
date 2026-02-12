@@ -9,7 +9,7 @@ import Notfound from "./Pages/Notfound";
 import { Toaster } from "react-hot-toast";
 import Signin from "./Pages/Signin";
 import Exam from "./Pages/Exam";
-import Examdetails from "./Components/Examdetails";
+import Profile from "./Pages/Profile";
 
 
 const routes = [
@@ -19,6 +19,7 @@ const routes = [
   { path: "/Signin", element: <Signin /> },
   { path: "/Exam", element: <Exam /> },
   { path: "/Exam/:id", element: <Exam /> },
+  { path: "/Profile", element: <Profile /> },
   // { path: "/Profile", element: <Profile /> },
   { path: "*", element: <Notfound /> },
   // { path: "/product/:id", element: <Details /> },
