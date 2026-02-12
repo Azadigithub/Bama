@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Options from "../Components/Sub/Options";
-
+import { ExamInfows } from "../Data/Data.js";
+import { useParams } from "react-router-dom";
 const Questions = [
   { id: 1, title: "" },
   { id: 2, title: "" },
@@ -55,6 +56,8 @@ const Questions = [
 ];
 
 const Exam = () => {
+  const { id } = useParams();
+
   const STORAGE_KEY = "exam-timer";
   const Allowedtimes = 1;
   const TotalMinutes = 250;
@@ -127,10 +130,12 @@ const Exam = () => {
         </div>
         <div className="flex flex-col p-[20px] ">
           <h1 className="text-center text-[30px] font-bold">
-            آزمون ورودی دوره های کارشناسی ارشد - سال 1405
+            {/* آزمون ورودی دوره های کارشناسی ارشد - سال 1405 */}
+            {ExamInfows[id - 1].title}
           </h1>
           <h2 className="text-center text-[20px] font-bold">
-            مهندسی کامپیوتر (کد1277)
+            {/* مهندسی کامپیوتر (کد1277) */}
+            {ExamInfows[id - 1].code}
           </h2>
         </div>
         <div className=" flex-center flex-col gap-[20px]">
@@ -258,6 +263,6 @@ const Exam = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Exam;

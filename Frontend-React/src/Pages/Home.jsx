@@ -7,85 +7,9 @@ import { IoLogInOutline } from "react-icons/io5";
 import { LiaArtstation } from "react-icons/lia";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
-const ArrayImages = [
-  {
-    url: "./Slider-images/azmoon-1.jpeg",
-    title: "رایگان آزمون بده و نتیجه آزمون رو برسی کن!",
-  },
-  {
-    url: "./Slider-images/exam-and time.jpeg",
-    title: "مهارت های آزمون دادن رو ارتقا بده",
-  },
-  {
-    url: "./Slider-images/exam-55.jpeg",
-    title: " مدیریت زمان در آزمون رو کنترل کن",
-  },
-  {
-    url: "./Slider-images/Work-schedule.jpg",
-    title: " با برنامه ریزی و تمرین قطعا میتونی به هدفت برسی!",
-  },
-  {
-    url: "./Slider-images/exam-4.webp",
-    title: "آزمون های آزمایشی ، تست خود سنجی و افزایش مهارت   ",
-  },
-  { url: "./Slider-images/exam-77.jpg", title: "تمرین تکنیک‌های تست زنی" },
-  { url: "./Slider-images/exam-77.jpg", title: "شناسایی نقاط قوت و ضعف" },
-  { url: "./Slider-images/exam-77.jpg", title: "مطمعن شو که قبول میشی!" },
-];
-
-const ExamInfows = [
-  {
-    id: 1,
-    title: "آزمون های آزمایشی  مهندسی کامپیوتر",
-    description: "چهار مرحله آزمون جامع تخصصی از کلیه مباحث ...",
-    image: "./Images/Azmoon2.jpg",
-  },
-  {
-    id: 2,
-    title: "آزمون های آزمایشی مهندسی برق ",
-    description: "چهار مرحله آزمون جامع تخصصی از کلیه مباحث ...",
-    image: "./Images/Azmoon2.jpg",
-  },
-  {
-    id: 3,
-    title: "آزمون های آزمایشی علوم انسانی",
-    description: " چهار مرحله آزمون جامع تخصصی از کلیه مباحث ...",
-    image: "./Images/Azmoon2.jpg",
-  },
-  {
-    id: 4,
-    title: "آزمون های آزمایشی زبان",
-    description: " چهار مرحله آزمون جامع تخصصی از کلیه مباحث ...",
-    image: "./Images/Azmoon2.jpg",
-  },
-];
-const KonkoorExams = [
-  {
-    id: 1,
-    title: "کنکور های مهندسی کامپیوتر",
-    description: "کنکور ارشد کامپیوتر از سال 1380 تا 1404 شامل 24 آزمون",
-    image: "./Images/Azmoon2.jpg",
-  },
-  {
-    id: 2,
-    title: "کنکور های مهندسی برق ",
-    description: "کنکور ارشد برق از سال 1380 تا 1404",
-    image: "./Images/Azmoon2.jpg",
-  },
-  {
-    id: 3,
-    title: " کنکور های علوم انسانی",
-    description: "کنکور ارشد انسانی از سال 1380 تا 1404",
-    image: "./Images/Azmoon2.jpg",
-  },
-  {
-    id: 4,
-    title: "  کنکور های رشته زبان",
-    description: "کنکور ارشد زبان از سال 1380 تا  1404 شامل 24 آزمون",
-    image: "./Images/Azmoon2.jpg",
-  },
-];
+import{  ArrayImages } from "../Data/Data.js";
+import { ExamInfows } from "../Data/Data.js";
+import { KonkoorExams } from "../Data/Data.js";
 
 const Home = () => {
   return (
@@ -171,13 +95,19 @@ const Home = () => {
             </div>
           </div>
           <div className="flex-center gap-[20px] ">
-            <Link to={"/Login"} className="flex-center  bg-white p-[10px] text-gray-600 rounded-4 cursor-pointer">
+            <Link
+              to={"/Login"}
+              className="flex-center  bg-white p-[10px] text-gray-600 rounded-4 cursor-pointer"
+            >
               <IoLogInOutline />
-              <p >ورود</p>
+              <p>ورود</p>
             </Link>
-            <Link to={"/Signin"} className="flex-center border-white border-2 p-[10px] rounded-4 cursor-pointer">
+            <Link
+              to={"/Signin"}
+              className="flex-center border-white border-2 p-[10px] rounded-4 cursor-pointer"
+            >
               <IoLogInOutline />
-              <p >ثبت نام</p>
+              <p>ثبت نام</p>
             </Link>
           </div>
         </div>
@@ -185,7 +115,13 @@ const Home = () => {
         <h2 className="text-center text-[32px] font-bold">آزمون های آزمایشی</h2>
         <div className="w-full flex-center flex-col gap-[20px] small:grid small:grid-cols-2 xlarge:grid-cols-[auto_auto_auto] large:grid-cols-4 bg-gray-200 p-[30px]">
           {ExamInfows.map((info) => {
-            return <Examcontent key={info.id} {...info} />;
+            return (
+              <div className="">
+                <Link to={`/Exam/${info.id}`}>
+                  <Examcontent key={info.id} {...info} />;
+                </Link>
+              </div>
+            );
           })}
         </div>
         <h2 className="text-center text-[32px] font-bold">

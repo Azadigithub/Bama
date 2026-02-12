@@ -9,6 +9,8 @@ import Notfound from "./Pages/Notfound";
 import { Toaster } from "react-hot-toast";
 import Signin from "./Pages/Signin";
 import Exam from "./Pages/Exam";
+import Examdetails from "./Components/Examdetails";
+
 
 const routes = [
   { path: "/", element: <Home /> },
@@ -16,6 +18,7 @@ const routes = [
   { path: "/Login", element: <Login /> },
   { path: "/Signin", element: <Signin /> },
   { path: "/Exam", element: <Exam /> },
+  { path: "/Exam/:id", element: <Exam /> },
   // { path: "/Profile", element: <Profile /> },
   { path: "*", element: <Notfound /> },
   // { path: "/product/:id", element: <Details /> },
