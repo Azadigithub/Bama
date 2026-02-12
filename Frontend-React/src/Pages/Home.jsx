@@ -6,6 +6,7 @@ import { BiSolidCategory } from "react-icons/bi";
 import { IoLogInOutline } from "react-icons/io5";
 import { LiaArtstation } from "react-icons/lia";
 import { FaRegQuestionCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ArrayImages = [
   {
@@ -170,14 +171,14 @@ const Home = () => {
             </div>
           </div>
           <div className="flex-center gap-[20px] ">
-            <div className="flex-center  bg-white text-gray-600 p-[10px] rounded-4 cursor-pointer">
+            <Link to={"/Login"} className="flex-center  bg-white p-[10px] text-gray-600 rounded-4 cursor-pointer">
               <IoLogInOutline />
-              <h3>ورود</h3>
-            </div>
-            <div className="flex-center border-white border-2 p-[10px] rounded-4 cursor-pointer">
+              <p >ورود</p>
+            </Link>
+            <Link to={"/Signin"} className="flex-center border-white border-2 p-[10px] rounded-4 cursor-pointer">
               <IoLogInOutline />
-              <h3>ثبت نام</h3>
-            </div>
+              <p >ثبت نام</p>
+            </Link>
           </div>
         </div>
 
