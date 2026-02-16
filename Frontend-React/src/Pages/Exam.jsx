@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Options from "../Components/Sub/Options";
 import { ExamInfows } from "../Data/Data.js";
 import { useParams } from "react-router-dom";
+import Modal from "../Components/Modal.jsx";
 const Questions = [
   { id: 1, title: "" },
   { id: 2, title: "" },
@@ -85,7 +86,7 @@ const Exam = () => {
       STORAGE_KEY,
       JSON.stringify({ started: true, startAt: now }),
     );
-  };
+  }
   const EndExam = () => {
     setEndTime(Date.now());
     // const end = Date.now();
@@ -228,14 +229,20 @@ const Exam = () => {
                   </li>
                 </ul>
               </div>
-              <button
+              {/* <button
                 onClick={() => {
                   StartExam();
                 }}
                 className=" border-2 border-black rounded-8 p-[20px] hover:cursor-pointer"
               >
                 شروع آزمون
-              </button>
+              </button> */}
+              <Modal
+              // onClick={StartExam}
+               onConfirm={StartExam} 
+                
+                textbitton="شروع آزمون"
+              />
             </div>
           )}
           {started && (
@@ -263,6 +270,6 @@ const Exam = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Exam;
