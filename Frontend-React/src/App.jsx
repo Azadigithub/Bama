@@ -11,6 +11,7 @@ import Signin from "./Pages/Signin";
 import Exam from "./Pages/Exam";
 import Profile from "./Pages/Profile";
 import ResualtTable from "./Pages/ResualtTable";
+import Modal from "./Components/Modal";
 
 
 const routes = [
@@ -21,7 +22,8 @@ const routes = [
   { path: "/Exam", element: <Exam /> },
   { path: "/Exam/:id", element: <Exam /> },
   { path: "/Profile", element: <Profile /> },
-  { path: "/ResualtTable", element: <ResualtTable /> },
+  { path: "/Profile", element: <Profile /> },
+  { path: "/modal", element: <Modal /> },
   // { path: "/Profile", element: <Profile /> },
   { path: "*", element: <Notfound /> },
   // { path: "/product/:id", element: <Details /> },
