@@ -23,6 +23,7 @@ const routes = [
   { path: "/Exam/:id", element: <Exam /> },
   { path: "/Profile", element: <Profile /> },
   { path: "/Profile", element: <Profile /> },
+  { path: "/Resualt", element: <ResualtTable /> },
   { path: "/modal", element: <Modal /> },
   // { path: "/Profile", element: <Profile /> },
   { path: "*", element: <Notfound /> },
