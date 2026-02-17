@@ -18,9 +18,9 @@ import { Menucategories } from "../Data/Data.js";
 
 const Home = () => {
   return (
-    <div className="font-Vazir w-full h-[100vh] grid  grid-cols-[100%] medium:grid-cols-[20%_80%]">
+    <div className="font-Vazir w-full h-[100vh] grid  grid-cols-[100%] medium:grid-cols-[15%_85%]">
       {/* Sidebar  */}
-      <div className="border-amber-700 border-l-4  bg-blue-100 hidden medium:block ">
+      <div className=" border-amber-700 border-l-4 max-w-[250px]  bg-blue-100 hidden medium:block ">
         <img
           src="./Logo/logo_azmoon.jpg"
           alt=""
@@ -36,45 +36,47 @@ const Home = () => {
         </div>
         <p className="text-center">رایگان آزمون بده!!</p>
         <hr />
-        <div className="">
-          <ul className="flex flex-col p-[15px]">
-            <li> حساب کاربری</li>
-            <li>مشاهده آزمون ها</li>
-            <li>آزمون های من</li>
-            <li>آزمون های نشان شده</li>
-            <li>تقویم</li>
-            <li>سفارشات</li>
-            <li>علاقه مندی ها </li>
-            <li>جلسات انلاین</li>
-            <li>مشاوره تحصیلی</li>
-            <li>پرسش و پاسخ </li>
-            <li> سوالات متداول</li>
-            <li>درباره ما</li>
-            <li> ارتباط با پشتیبانی</li>
-            <li>خروج از حساب </li>
-          </ul>
-        </div>
-        <div className="flex-center gap-[20px] flex-wrap ">
-          <img
-            src="./Logo/Social networks/twitter-logo.png"
-            alt=""
-            className="w-[30px]"
-          />
-          <img
-            src="./Logo/Social networks/bale-logo-.png"
-            alt=""
-            className="w-[30px]"
-          />
-          <img
-            src="./Logo/Social networks/instagram-logo.png"
-            alt=""
-            className="w-[30px]"
-          />
-          <img
-            src="./Logo/Social networks/telegram-logo.webp"
-            alt=""
-            className="w-[30px]"
-          />
+        <div className="sticky top-[70px] w-full h-fit flex-center flex-col">
+          <div className="">
+            <ul className="flex flex-col p-[15px] gap-[5px]">
+              <li> حساب کاربری</li>
+              <li>مشاهده آزمون ها</li>
+              <li>آزمون های من</li>
+              <li>آزمون های نشان شده</li>
+              <li>تقویم</li>
+              <li>سفارشات</li>
+              <li>علاقه مندی ها </li>
+              <li>جلسات انلاین</li>
+              <li>مشاوره تحصیلی</li>
+              <li>پرسش و پاسخ </li>
+              <li> سوالات متداول</li>
+              <li>درباره ما</li>
+              <li> ارتباط با پشتیبانی</li>
+              <li>خروج از حساب </li>
+            </ul>
+          </div>
+          <div className="flex-center gap-[20px] flex-wrap ">
+            <img
+              src="./Logo/Social networks/twitter-logo.png"
+              alt=""
+              className="w-[30px]"
+            />
+            <img
+              src="./Logo/Social networks/bale-logo-.png"
+              alt=""
+              className="w-[30px]"
+            />
+            <img
+              src="./Logo/Social networks/instagram-logo.png"
+              alt=""
+              className="w-[30px]"
+            />
+            <img
+              src="./Logo/Social networks/telegram-logo.webp"
+              alt=""
+              className="w-[30px]"
+            />
+          </div>
         </div>
       </div>
       {/* Main content  */}
