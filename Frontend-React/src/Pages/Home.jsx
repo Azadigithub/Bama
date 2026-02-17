@@ -124,7 +124,7 @@ const Home = () => {
         </div>
 
         <h2 className="text-center text-[32px] font-bold">آزمون های آزمایشی</h2>
-        <div className="w-full flex-center flex-col gap-[20px] small:grid small:grid-cols-2 xlarge:grid-cols-[auto_auto_auto] large:grid-cols-4 bg-gray-200 p-[30px]">
+        <div className="w-full flex-center flex-col gap-[30px] small:grid small:grid-cols-2 xlarge:grid-cols-[auto_auto_auto] large:grid-cols-4 bg-gray-200 p-[30px]">
           {ExamInfows.map((info) => {
             return (
               <div key={info.id} className="">
