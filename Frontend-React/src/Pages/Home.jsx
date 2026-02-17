@@ -6,8 +6,9 @@ import { BiSolidCategory } from "react-icons/bi";
 import { IoLogInOutline } from "react-icons/io5";
 import { LiaArtstation } from "react-icons/lia";
 import { FaRegQuestionCircle } from "react-icons/fa";
+import { IoSearchSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import{  ArrayImages } from "../Data/Data.js";
+import { ArrayImages } from "../Data/Data.js";
 import { ExamInfows } from "../Data/Data.js";
 import { KonkoorExams } from "../Data/Data.js";
 
@@ -79,36 +80,46 @@ const Home = () => {
           <Homeslider DataImages={ArrayImages} name />
         </div>
         {/* Categories  */}
-        <div className="flex-center flex-wrap justify-evenly w-[full] text-white bg-gray-600 p-[20px] gap-[20px]">
-          <div className="flex-center gap-[30px] flex-wrap">
-            <div className="flex-center">
-              <BiSolidCategory />
-              <h3>دسته بندی آزمون ها</h3>
-            </div>
-            <div className="flex-center">
-              <LiaArtstation />
-              <h3> شگفت انگیز</h3>
-            </div>
-            <div className="flex-center">
-              <FaRegQuestionCircle />
-              <h3>سوالی دارید؟</h3>
-            </div>
+        <div className="flex flex-col flex-wrap justify-evenly w-[full] text-white bg-gray-600 p-[20px] gap-[20px]">
+          <div className="w-full small:w-[50%] large:w-[30%] min-h-[50px] flex items-center justify-between gap-[10px] border-gray-800 border-2 rounded-8 pr-[10px]">
+            <IoSearchSharp className="min-w-[30px] min-h-[30px]" />
+            <input
+              type="text"
+              placeholder="جست و جو"
+              className=" w-full h-full border-0 outline-0"
+            />
           </div>
-          <div className="flex-center gap-[20px] ">
-            <Link
-              to={"/Login"}
-              className="flex-center  bg-white p-[10px] text-gray-600 rounded-4 cursor-pointer"
-            >
-              <IoLogInOutline />
-              <p>ورود</p>
-            </Link>
-            <Link
-              to={"/Signin"}
-              className="flex-center border-white border-2 p-[10px] rounded-4 cursor-pointer"
-            >
-              <IoLogInOutline />
-              <p>ثبت نام</p>
-            </Link>
+          <div className="flex-center  flex-wrap justify-evenly w-[full] p-[10px] gap-[20px]">
+            <div className="flex-center gap-[30px] flex-wrap">
+              <div className="flex-center">
+                <BiSolidCategory />
+                <h3>دسته بندی آزمون ها</h3>
+              </div>
+              <div className="flex-center">
+                <LiaArtstation />
+                <h3> شگفت انگیز</h3>
+              </div>
+              <div className="flex-center">
+                <FaRegQuestionCircle />
+                <h3>سوالی دارید؟</h3>
+              </div>
+            </div>
+            <div className="flex-center gap-[20px] ">
+              <Link
+                to={"/Login"}
+                className="flex-center  bg-white p-[10px] text-gray-600 rounded-4 cursor-pointer"
+              >
+                <IoLogInOutline />
+                <p>ورود</p>
+              </Link>
+              <Link
+                to={"/Signin"}
+                className="flex-center border-white border-2 p-[10px] rounded-4 cursor-pointer"
+              >
+                <IoLogInOutline />
+                <p>ثبت نام</p>
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -116,9 +127,9 @@ const Home = () => {
         <div className="w-full flex-center flex-col gap-[20px] small:grid small:grid-cols-2 xlarge:grid-cols-[auto_auto_auto] large:grid-cols-4 bg-gray-200 p-[30px]">
           {ExamInfows.map((info) => {
             return (
-              <div className="">
+              <div key={info.id} className="">
                 <Link to={`/Exam/${info.id}`}>
-                  <Examcontent key={info.id} {...info} />;
+                  <Examcontent {...info} />;
                 </Link>
               </div>
             );
