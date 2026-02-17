@@ -161,7 +161,7 @@ const Exam = () => {
           <p>استفاده از ماشین حساب مجاز نیست.</p>
         </div>
         <div className="w-[60px]">
-          <img src="./Images/sanjesh.jpg" alt="" className="w-full h-full" />
+          <img src="/Images/sanjesh.jpg" alt="" className="w-full h-full" />
         </div>
         <div className=" flex flex-col">
           <p> آزمون نمره منفی دارد.</p>
