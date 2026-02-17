@@ -1,27 +1,44 @@
+export const Menucategories = [
+  {id:1, title:"آزمون های سراسری"},
+  {id:2, title:"آزمون های ارشد"},
+  {id:3, title:"آزمون های دکترا"},
+  {id:4, title:"آزمون  پرستاری"},
+  {id:5, title:"آزمون های وکالت"},
+]
+
 export const ArrayImages = [
   {
-    url: "./Slider-images/azmoon-1.jpeg",
+    // url: "./Slider-images/azmoon-1.jpeg",
     title: "رایگان آزمون بده و نتیجه آزمون رو برسی کن!",
   },
   {
-    url: "./Slider-images/exam-and time.jpeg",
+    // url: "./Slider-images/exam-and time.jpeg",
     title: "مهارت های آزمون دادن رو ارتقا بده",
   },
   {
-    url: "./Slider-images/exam-55.jpeg",
+    // url: "./Slider-images/exam-55.jpeg",
     title: " مدیریت زمان در آزمون رو کنترل کن",
   },
   {
-    url: "./Slider-images/Work-schedule.jpg",
+    // url: "./Slider-images/Work-schedule.jpg",
     title: " با برنامه ریزی و تمرین قطعا میتونی به هدفت برسی!",
   },
   {
-    url: "./Slider-images/exam-4.webp",
+    // url: "./Slider-images/exam-4.webp",
     title: "آزمون های آزمایشی ، تست خود سنجی و افزایش مهارت   ",
   },
-  { url: "./Slider-images/exam-77.jpg", title: "تمرین تکنیک‌های تست زنی" },
-  { url: "./Slider-images/exam-77.jpg", title: "شناسایی نقاط قوت و ضعف" },
-  { url: "./Slider-images/exam-77.jpg", title: "مطمعن شو که قبول میشی!" },
+  {
+    // url: "./Slider-images/exam-77.jpg",
+    title: "تمرین تکنیک‌های تست زنی",
+  },
+  {
+    // url: "./Slider-images/exam-77.jpg",
+    title: "شناسایی نقاط قوت و ضعف",
+  },
+  {
+    // url: "./Slider-images/exam-77.jpg",
+    title: "مطمعن شو که قبول میشی!",
+  },
 ];
 
 export const ExamInfows = [
@@ -51,6 +68,59 @@ export const ExamInfows = [
     code: "  زبان (کد1141)",
     title: "آزمون های آزمایشی زبان",
     description: " چهار مرحله آزمون جامع تخصصی از کلیه مباحث ...",
+    image: "./Images/Azmoon2.jpg",
+  },
+];
+export const Examinslider = [
+  {
+    id: 1,
+    title: "آزمون های آزمایشی  مهندسی کامپیوتر",
+    description: "یک مرحله آزمون جامع تخصصی از کلیه مباحث ...",
+    image: "./Images/Azmoon2.jpg",
+  },
+  {
+    id: 2,
+    title: "آزمون های آزمایشی مهندسی برق ",
+    description: "  آزمون جامع تخصصی برق ...",
+    image: "./Images/Azmoon2.jpg",
+  },
+  {
+    id: 3,
+    title: "آزمون های آزمایشی علوم انسانی",
+    description: " دو مرحله آزمون طبقه بندی شده ...",
+    image: "./Images/Azmoon2.jpg",
+  },
+  {
+    id: 4,
+    title: "آزمون های آزمایشی زبان",
+    description: " دوازده مرحله آزمون جامع تخصصی از کلیه مباحث ...",
+    image: "./Images/Azmoon2.jpg",
+  },
+  {
+    id: 5,
+    title: "آزمون های آزمایشی  مهندسی کامپیوتر",
+    description: "",
+    image: "./Images/Azmoon2.jpg",
+  },
+  {
+    id: 6,
+    code: "مهندسی برق (کد1251) ",
+    title: "آزمون های آزمایشی مهندسی برق ",
+    description: "چهار مرحله آزمون جامع تخصصی از کلیه مباحث ...",
+    image: "./Images/Azmoon2.jpg",
+  },
+  {
+    id: 7,
+    code: "علوم انسانی (کد1148)",
+    title: "آزمون های آزمایشی علوم انسانی",
+    description: " چهار مرحله آزمون جامع تخصصی از کلیه مباحث ...",
+    image: "./Images/Azmoon2.jpg",
+  },
+  {
+    id: 8,
+    code: "  زبان (کد1141)",
+    title: "آزمون های آزمایشی زبان",
+    description: " یک مرحله آزمون جامع تخصصی از کلیه مباحث ...",
     image: "./Images/Azmoon2.jpg",
   },
 ];

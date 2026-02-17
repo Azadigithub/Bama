@@ -1,7 +1,6 @@
 import React from "react";
-import Homeslider from "../Components/Slider/Homeslider";
 import Examcontent from "../Components/Examcontent";
-// rect-icons
+// rect-Libraries
 import { BiSolidCategory } from "react-icons/bi";
 import { IoLogInOutline } from "react-icons/io5";
 import { LiaArtstation } from "react-icons/lia";
@@ -9,8 +8,13 @@ import { FaRegQuestionCircle } from "react-icons/fa";
 import { IoSearchSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { ArrayImages } from "../Data/Data.js";
-import { ExamInfows } from "../Data/Data.js";
-import { KonkoorExams } from "../Data/Data.js";
+// components
+import Homeslider from "../Components/Slider/Homeslider";
+import Category from "../Components/Sub/Category.jsx";
+import Examslider from "../Components/Slider/Examslider.jsx";
+//data
+import { Examinslider } from "../Data/Data.js";
+import { Menucategories } from "../Data/Data.js";
 
 const Home = () => {
   return (
@@ -122,32 +126,25 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        <h2 className="text-center text-[32px] font-bold">آزمون های آزمایشی</h2>
-        <div className="w-full flex-center flex-col gap-[30px] small:grid small:grid-cols-2 xlarge:grid-cols-[auto_auto_auto] large:grid-cols-4 bg-gray-200 p-[30px]">
-          {ExamInfows.map((info) => {
-            return (
-              <div key={info.id} className="">
-                <Link to={`/Exam/${info.id}`}>
-                  <Examcontent {...info} />;
-                </Link>
-              </div>
-            );
-          })}
+        {/* Menu  */}
+        <div className="flex-center flex-wrap w-full p-[30px] gap-[20px]">
+          {Menucategories.map((cat) => (
+            // console.log(cat)
+            <Category key={cat.id} {...cat} />
+          ))}
         </div>
-        <h2 className="text-center text-[32px] font-bold">
-          کنکور های سالهای گذشته
-        </h2>
-        <div className="w-full flex-center gap-[20px] flex-col small:grid small:grid-cols-2 xlarge:grid-cols-[auto_auto_auto] large:grid-cols-4 bg-gray-200 p-[30px]">
-          {KonkoorExams.map((info) => {
-            return <Examcontent key={info.id} {...info} />;
-          })}
+        {/* ExamInfows */}
+        <div className="w-full flex flex-col gap-[30px] bg-gray-200 p-[30px]">
+          <h2 className="text-center text-[32px] font-bold">
+            آزمون های ویژه ارشد
+          </h2>
+          <Examslider DataImages={Examinslider} />
+        </div>
+        <div className="w-full flex flex-col gap-[30px] bg-gray-200 p-[30px]">
+          <h2 className="text-center text-[32px] font-bold">کنکور سراسری</h2>
+          <Examslider DataImages={Examinslider} />
         </div>
       </div>
-      {/* <div className="bg-amber-100 "> */}
-      {/* <Homeslider DataImages={ArrayImages} name /> */}
-      {/* </div> */}
-      {/* <div className="bg-green-700 hidden medium:block"></div> */}
     </div>
   );
 };
