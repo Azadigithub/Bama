@@ -190,15 +190,6 @@ export const ResualtExam = [
   },
   {
     id: 5,
-    percent: "15.01",
-    lesson: "زبان انگلیسی",
-    qusetions: 20,
-    correct: 6,
-    wrong: 3,
-    empty: 11.0,
-  },
-  {
-    id: 6,
     percent: "82",
     lesson: "منطقی ، معماری ، سیستم های الکترونیک",
     qusetions: 20,
@@ -207,7 +198,7 @@ export const ResualtExam = [
     empty: 6,
   },
   {
-    id: 7,
+    id: 6,
     percent: "23.88",
     lesson: "سیستم عامل ، شبکه ، پایگاه داده",
     qusetions: 20,

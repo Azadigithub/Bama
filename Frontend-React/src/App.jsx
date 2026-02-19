@@ -12,6 +12,7 @@ import Exam from "./Pages/Exam";
 import Profile from "./Pages/Profile";
 import ResualtTable from "./Pages/ResualtTable";
 import Modal from "./Components/Modal";
+import Muichart from "./Components/Sub/Muichart";
 
 
 const routes = [
@@ -25,6 +26,7 @@ const routes = [
   { path: "/Profile", element: <Profile /> },
   { path: "/Resualt", element: <ResualtTable /> },
   { path: "/modal", element: <Modal /> },
+  { path: "/chart", element: <Muichart /> },
   // { path: "/Profile", element: <Profile /> },
   { path: "*", element: <Notfound /> },
   // { path: "/product/:id", element: <Details /> },
