@@ -2,7 +2,7 @@ import React from "react";
 import Reviewlist from "../Components/Sub/Reviewlist";
 const Review = () => {
   return (
-    <div className="font-Vazir flex items-center flex-col w-full h-[100vh]  bg-linear-to-bl from-purple-600 to-white p-[20px] gap-[10px]">
+    <div className="font-Vazir flex-center items-center flex-col w-full h-[100vh]  bg-linear-to-bl from-purple-600 to-white p-[20px] gap-[10px]">
       <h1 className="text-white text-center font-bold">
         باما درس خوندن خیلی راحته !
       </h1>
