@@ -13,7 +13,8 @@ import Profile from "./Pages/Profile";
 import ResualtTable from "./Pages/ResualtTable";
 import Modal from "./Components/Modal";
 import Muichart from "./Components/Sub/Muichart";
-import Review from "./Pages/Review";
+import Review from "./Pages/Review/Review";
+import Firststate from "./Pages/Review/Firststate";
 
 
 const routes = [
@@ -28,7 +29,8 @@ const routes = [
   { path: "/Resualt", element: <ResualtTable /> },
   { path: "/modal", element: <Modal /> },
   { path: "/chart", element: <Muichart /> },
-  { path: "/review", element: <Review /> },
+  { path: "/Review", element: <Review /> },
+  { path: "/FirstState", element: <Firststate /> },
   // { path: "/Profile", element: <Profile /> },
   { path: "*", element: <Notfound /> },
   // { path: "/product/:id", element: <Details /> },
