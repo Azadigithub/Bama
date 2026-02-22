@@ -8,7 +8,7 @@ const Firststate = () => {
         چند سوال کوتاه هست که برای شروع لازمه جواب بدی
       </h3>
       <div className="w-full">
-        <h4 className="text-center"> جنسیت</h4>
+        <h4 className="text-center p-[10px]"> جنسیت</h4>
         <div className="flex-center w-full gap-[15px]">
           <div className="flex-center">
             <label for="cars">آقا </label>
@@ -21,7 +21,7 @@ const Firststate = () => {
         </div>
       </div>
       <label for="cars"> وضعیت تحصیل</label>
-      <select className="w-[220px] bg-white border-purple-800 border-2 rounded-4 px-[10px]">
+      <select className="w-[220px] bg-white border-0 outline-0 rounded-4 px-[10px]">
         <option value="volvo"> </option>
         <option value="volvo">دانش آموز</option>
         <option value="saab">راهنمایی</option>
@@ -30,7 +30,7 @@ const Firststate = () => {
         <option value="audi"> درحال آمادگی برای کنکور</option>
       </select>
       <label for="cars">در چه مقطع تحصیلی هستی؟</label>
-      <select className="w-[220px] bg-white border-purple-800 border-2 rounded-4 px-[10px]">
+      <select className="w-[220px] bg-white border-0 outline-0 rounded-4 px-[10px]">
         <option value="volvo"> </option>
         <option value="volvo">ابتدایی</option>
         <option value="saab">راهنمایی</option>
