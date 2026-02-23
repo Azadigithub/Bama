@@ -1,3 +1,5 @@
+import { id } from "zod/v4/locales";
+
 export const Menucategories = [
   {id:1, title:"آزمون های سراسری"},
   {id:2, title:"آزمون های ارشد"},
@@ -207,3 +209,14 @@ export const ResualtExam = [
     empty: 10,
   },
 ];
+
+export const GlobalExamData = [
+  {id:1 , exam :"آزمون سراسری 1404"},
+  {id:1 , exam :"آزمون سراسری 1403"},
+  {id:1 , exam :"آزمون سراسری 1402"},
+  {id:1 , exam :"آزمون سراسری 1401"},
+  {id:1 , exam :"آزمون سراسری 1400"},
+  {id:1 , exam :"آزمون سراسری 1399"},
+  {id:1 , exam :"آزمون سراسری 1398"},
+
+]
