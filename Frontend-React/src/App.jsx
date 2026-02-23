@@ -8,13 +8,14 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Notfound from "./Pages/Notfound";
 import Signin from "./Pages/Signin";
-import Exam from "./Pages/Exam";
+import Exam from "./Pages/Exam/Exam";
 import Profile from "./Pages/Profile";
-import ResualtTable from "./Pages/ResualtTable";
+import ResualtTable from "./Pages/Exam/ResualtTable";
 import Modal from "./Components/Modal";
 import Muichart from "./Components/Sub/Muichart";
 import Review from "./Pages/Review/Review";
 import Firststate from "./Pages/Review/Firststate";
+import GlobalExam from "./Pages/Exam/GlobalExam";
 
 
 const routes = [
@@ -23,6 +24,7 @@ const routes = [
   { path: "/Login", element: <Login /> },
   { path: "/Signin", element: <Signin /> },
   { path: "/Exam", element: <Exam /> },
+  { path: "/GlobalExam", element: <GlobalExam /> },
   { path: "/Exam/:id", element: <Exam /> },
   { path: "/Profile", element: <Profile /> },
   { path: "/Profile", element: <Profile /> },

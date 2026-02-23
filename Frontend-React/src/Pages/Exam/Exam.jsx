@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Options from "../Components/Sub/Options";
-import { ExamInfows } from "../Data/Data.js";
+import Options from "../../Components/Sub/Options";
+import { ExamInfows } from "../../Data/Data.js";
 import { useParams } from "react-router-dom";
-import Modal from "../Components/Modal.jsx";
+import Modal from "../../Components/Modal.jsx";
 const Questions = [
   { id: 1, title: "" },
   { id: 2, title: "" },
